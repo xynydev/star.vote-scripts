@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Scripts for counting ballots and runoff with the star.vote ballot record. 
 
 # CalculateTotal.py
@@ -9,6 +8,3 @@ Calculates the total votes for each candidate, no runoff.
                         Path to the input .csv from star.vote. (eg. ~/Desktop/starvoting_ballots_1234678_20210414010104.csv)
   -O OUTPUT, --output OUTPUT
                         Path to the output file (eg. ~/Desktop/totalvotes.csv)
-=======
-
->>>>>>> 749a118564fe46df3cf0caa4712515afb9e7978b
