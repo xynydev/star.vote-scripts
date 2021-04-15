@@ -34,4 +34,4 @@ for ib in range(0, rows):
 
 
 results.to_csv(args.output)
-print(results)
+# print(results)

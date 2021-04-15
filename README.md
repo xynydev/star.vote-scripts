@@ -1,5 +1,7 @@
 Scripts for counting ballots and runoff with the star.vote ballot record. 
 
+All of these scripts keep the VoteTime field making it possible for you to create data visualisations of votes overtime.
+
 # CalculateTotal.py
 Calculates the total votes for each candidate, no runoff.
 
