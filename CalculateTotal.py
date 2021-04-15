@@ -5,8 +5,8 @@ import sys
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-I", "--input", help="Path to the input .csv from star.vote. (eg. ~/Desktop/starvoting_ballots_1234678_20210414010104.csv)")
-parser.add_argument("-O", "--output", help="Path to the output file (eg. ~/Desktop/totalvotes.csv)")
+parser.add_argument("-i", "--input", help="Path to the input .csv from star.vote. (eg. ~/Desktop/starvoting_ballots_1234678_20210414010104.csv)")
+parser.add_argument("-o", "--output", help="Path to the output file (eg. ~/Desktop/totalvotes.csv)")
 
 args = parser.parse_args()
 
@@ -19,12 +19,17 @@ else:
 
 results = pd.read_csv(args.input)
 
+del results['pollID']
+del results['voterID']
+
 voteTime = results['voteTime'].tolist()
 
-for iv in range(1, 68):
+rows = results.shape[0]
+
+for iv in range(1, rows):
      results.loc[iv] = results.loc[iv] + results.loc[iv-1]
 
-for ib in range(0, 68):
+for ib in range(0, rows):
      results.loc[ib, 'voteTime'] = voteTime.__getitem__(ib)
 
 
