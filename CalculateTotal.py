@@ -1,5 +1,6 @@
 import pandas as pd
 import argparse
+import sys
 
 
 parser = argparse.ArgumentParser()
@@ -10,9 +11,10 @@ parser.add_argument("-O", "--output", help="Path to the output file (eg. ~/Deskt
 args = parser.parse_args()
 
 if args.input and args.output:
-     return()
+     print("Starting...")
 else:
      print("Lacking parameters, terminating. Try running with --help (-h).")
+     sys.exit(0)
 
 
 results = pd.read_csv(args.input)
